@@ -1,0 +1,32 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-8">
+                    <h1>Overzicht studenten</h1>
+                </div>
+                <div class="col-4 text-right">
+                    <button onclick="window.location.href='/Student/NieuweStudent'" class="btn btn-success">Nieuw
+                        student</button>
+                </div>
+            </div>
+        </div>
+        @foreach (Student student in LijstMetStudenten.GetInstance().lijst)
+        {
+            <div class="col-12">
+                <div class="card w-100 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">@student.Id @student.Voornaam @student.Achternaam</h5>
+                        <button onclick="window.location.href='/Student/WijzigStudent/@student.Id'"
+                            class="btn btn-primary">Wijzig studentgegevens</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

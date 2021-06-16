@@ -1,0 +1,3 @@
+﻿@model Student
+
+<p>De student heet @Model.Voornaam @Model.Achternaam en heeft emailadres: @Model.Email.</p>

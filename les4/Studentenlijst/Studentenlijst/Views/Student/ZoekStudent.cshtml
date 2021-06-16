@@ -1,0 +1,9 @@
+﻿@model Student
+@if (@Model != null)
+{
+    <p>De student heet @Model.Voornaam @Model.Achternaam en heeft emailadres: @Model.Email.</p>
+}
+else
+{
+    <p>Sorry, geen student gevonden :(</p>
+}

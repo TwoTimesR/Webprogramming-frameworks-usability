@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngFor="let h of hero" class="row">
+        <div class="col-12 text-center">
+            <h1 class="mt-3">Heldengegevens</h1>
+        </div>
+        <div class="col-lg-3 col-12">Naam:</div>
+        <div class="col-lg-3 col-12">{{h.name}}</div>
+        <div class="col-lg-3 col-12">Leeftijd:</div>
+        <div class="col-lg-3 col-12">{{h.age}}</div>
+        <div class="col-12 mt-5">Beschrijving:</div>
+        <div class="col-12">{{h.description}}</div>
+    </div>
+
+</div>

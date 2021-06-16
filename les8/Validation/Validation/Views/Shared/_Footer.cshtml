@@ -1,0 +1,18 @@
+<footer class="">
+	<div class="row">
+		<div class="col-12">
+			<p>top 3 studenten</p>
+            <ul>
+                @foreach (Student student in (List<Student>)TempData["Top3"])
+                {
+                    <li>@student.Voornaam met @student.Studiepunten studiepunten</li>
+                }
+            </ul>
+		</div>
+		<div class="row">
+			<div class="col-12 text-center">
+				&copy; 2020 - Validation - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,125 @@
+/* Scroll 5 */
+
+* {
+    outline: none;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, #d4e241, #a9b532);
+    border-radius: 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, .12) 0 3px 13px 1px;
+}
+
+.bg-green, .tab-active, .activeCard {
+    background-color: #a9b532 !important;
+}
+
+input {
+    border: 2px solid #a9b532;
+    /* margin-top: 2px; */
+}
+
+.tab-active, .activeCard {
+    color: white !important;
+}
+
+.tab-inactive {
+    background-color: lightgrey !important;
+}
+
+.logo {
+    width: 12rem;
+}
+
+.img-circle {
+    border: 0px solid black;
+    border-radius: 500%;
+    height: 60px;
+    width: 60px;
+    content: url('../img/person.jpg');
+}
+
+.singed-in:hover {
+    cursor: pointer;
+}
+
+.btn-tabs {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-color: transparent !important;
+    outline: none;
+}
+
+#uitbreidenBtn {
+    margin-left: -15px !important;
+}
+
+.btn-tabs:hover, .btn-action:hover, .card:hover {
+    background-color: #b8c063 !important;
+    color: white !important;
+}
+
+.btn-tabs:focus {
+    box-shadow: none !important;
+}
+
+.box-border {
+    border: 1px solid lightgrey;
+}
+
+.card {
+    border: 1px solid #a9b532 !important;
+}
+
+.listview {
+    height: 30rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+#mijnSelectieSection {
+    display: none;
+}
+
+#uitbreidenSection {
+    display: block;
+}
+
+.list-group-item:hover {
+    background-color: #a9b532;
+    color: white;
+}
+
+select {
+    border: none;
+    width: 100.2% !important;
+}
+
+.sidemenu {
+    height: 15rem;
+}
+
+.footer {
+    width: 100%;
+    background-color: #EAEAEA;
+    text-align: center;
+    margin-top: 10px;
+    padding: 15px 0px;
+    position: fixed;
+    bottom: 0;
+}
+
+.alert {
+    display: none;
+}

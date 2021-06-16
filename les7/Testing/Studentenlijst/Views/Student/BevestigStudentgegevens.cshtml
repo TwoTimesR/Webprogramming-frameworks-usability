@@ -1,0 +1,50 @@
+@model Student
+@{
+    ViewData["Title"] = "Wijzig Student";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-8">
+                    <h1>Studentgegevens bevestigen</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card w-100 mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="font-weight-bold">Voornaam:</p>
+                        </div>
+                        <div class="col-6">
+                            <p>@Model.Voornaam</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="font-weight-bold">Achternaam:</p>
+                        </div>
+                        <div class="col-6">
+                            <p>@Model.Achternaam</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="font-weight-bold">Emailadres:</p>
+                        </div>
+                        <div class="col-6">
+                            <p>@Model.Email</p>
+                        </div>
+
+                        <div class="col-12 text-right">
+                            <button class="btn btn-success" onclick="window.location.href='/'">Bevestig
+                                gegevens</button>
+                            <button class="btn btn-danger"
+                                onclick="window.location.href='/Student/NieuweStudent/'">Annuleer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

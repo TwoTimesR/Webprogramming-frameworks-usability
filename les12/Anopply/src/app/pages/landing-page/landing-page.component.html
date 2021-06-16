@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center mt-3">Superhelden pagina</h1>
+        </div>
+        <div class="col-12 text-center">
+            <input [(ngModel)]="name" type="text" placeholder="Superheld naam">
+            <input [(ngModel)]="age" type="number" placeholder="Leeftijd">
+            <button (click)="createNewHero()">Add new hero</button>
+        </div>
+        <div class="col-12 text-center mb-3">
+            <textarea class="w-50" [(ngModel)]="description" type="text" placeholder="Beschrijving"></textarea>
+        </div>
+        <div *ngIf="empty" class="col-12 text-center mb-3">
+            <p class="text-danger">Voer een naam en leeftijd in!</p>
+        </div>
+        <div *ngIf="easteregg" class="col-12 text-center mb-3">
+            <iframe src="https://giphy.com/embed/gd09Y2Ptu7gsiPVUrv" width="480" height="270" frameBorder="0"
+                class="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <div *ngFor="let hero of heroes" class="col-lg-4 col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{hero.name}}</h5>
+                    <p class="card-text">Leeftijd: {{hero.age}}
+                    </p>
+                    <a routerLink="/details/{{hero.id}}" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

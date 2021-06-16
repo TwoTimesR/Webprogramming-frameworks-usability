@@ -1,0 +1,47 @@
+@model IEnumerable<Security.Models.ToetsResultaat>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cijfer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Docent)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cijfer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Docent.DocentNaam)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { StudentId = item.Student.StudentId, Datum = item.Datum }) |
+                @Html.ActionLink("Details", "Details", new { StudentId = item.Student.StudentId, Datum = item.Datum }) |
+                @Html.ActionLink("Delete", "Delete", new { StudentId = item.Student.StudentId, Datum = item.Datum })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

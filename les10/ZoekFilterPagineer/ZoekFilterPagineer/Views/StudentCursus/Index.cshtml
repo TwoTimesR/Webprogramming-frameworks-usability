@@ -1,0 +1,41 @@
+@model IEnumerable<ZoekFilterPagineer.Models.StudentCursus>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cursus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cursus.CursusNaam)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { StudentId = item.Student.StudentId, CursusId = item.Cursus.CursusId }) |
+                @Html.ActionLink("Details", "Details", new { StudentId = item.Student.StudentId, CursusId = item.Cursus.CursusId }) |
+                @Html.ActionLink("Delete", "Delete", new {  StudentId = item.Student.StudentId, CursusId = item.Cursus.CursusId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

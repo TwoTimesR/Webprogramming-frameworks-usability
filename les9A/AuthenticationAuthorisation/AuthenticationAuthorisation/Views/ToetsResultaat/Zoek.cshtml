@@ -1,0 +1,14 @@
+﻿@model List<ToetsResultaat>
+
+@{
+    ViewData["Title"] = "Zoek";
+}
+
+@foreach (ToetsResultaat item in Model)
+{
+    <ul>
+        <li>
+            @Html.Raw(item.StudentNaam) met cijfer @Html.Raw(item.Cijfer)
+        </li>
+    </ul>
+}

@@ -1,0 +1,67 @@
+﻿@model ZoekFilterPagineer.ViewModel.GepagineerdeLijst<ZoekFilterPagineer.Models.Student>
+
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if ((String)@ViewData["Sorteer"] == "oplopend")
+{
+<a asp-action="Index"
+   asp-route-sorteerVolgorde="aflopend"
+   asp-route-filter="@ViewData["Filter"]">↓</a> }
+else
+{
+<a asp-action="Index"
+   asp-route-sorteerVolgorde="oplopend"
+   asp-route-filter="@ViewData["Filter"]">↑</a>}
+<form asp-action="Index" method="get">
+    <input type="hidden" name="sorteerVolgorde" value='@ViewData["Sorteer"]' />
+    Filter: <input type="text" name="filter" value='@ViewData["Filter"]' />
+    <input type="submit" value="Filter" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().StudentNaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Lengte)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.StudentNaam)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Lengte)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+    </td>
+</tr>
+}
+    </tbody>
+</table>
+<a class='btn btn-default @(Model.HeeftVorige() ? "" : "disabled")'
+   asp-action="Index" asp-route-pagina="@((Model.Pagina) - 1)"
+   asp-route-sorteerVolgorde='@ViewData["Sorteer"]'
+   asp-route-filter='@ViewData["Filter"]'>
+    ←
+</a>
+<a class='btn btn-default @(Model.HeeftVolgende() ? "" : "disabled")'
+   asp-action="Index" asp-route-pagina="@((Model.Pagina) + 1)"
+   asp-route-sorteerVolgorde='@ViewData["Sorteer"]'
+   asp-route-filter='@ViewData["Filter"]'>
+    →
+</a>
